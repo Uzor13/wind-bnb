@@ -11,7 +11,6 @@ function App() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [inputValue, setInputValue] = useState('');
-    const [guests, setGuests] = useState();
 
     const getData = () => {
         fetch('stays.json', {
