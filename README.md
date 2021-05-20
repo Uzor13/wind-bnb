@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Wind BnB}</h1>
+<h1 align="center">Wind BnB</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://https://awesome-mayer-46805f.netlify.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://https://github.com/Uzor13/wind-bnb/">
       Solution
     </a>
     <span> | </span>
@@ -36,11 +36,12 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![Screenshot_2021-05-20 Wind BnB](https://user-images.githubusercontent.com/40992425/118973565-b8ea4e80-b969-11eb-8ca6-6232ad771f8e.png)
+
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
-- Where can I see your demo? My demo is online at
+- Where can I see your demo? My demo is online at https://awesome-mayer-46805f.netlify.app/
 - What was your experience? It was a training experience in fetching files from local json data
 - What have you learned/improved? Filtering data, fetching local data, using tailwind with react
 - Your wisdom? :) To get good at something, you have to keep practicing
