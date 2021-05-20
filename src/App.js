@@ -1,25 +1,56 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useEffect, useState} from "react";
+import Header from "./components/Header";
+import Title from "./components/Title";
+import StaysData from "./components/StaysData";
+import Footer from "./components/Footer";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [inputValue, setInputValue] = useState('');
+    const [guests, setGuests] = useState();
+
+    const getData = () => {
+        fetch('stays.json', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }
+        ).then((res) => {
+            console.log(res);
+            return res.json();
+        }).then((data) => {
+            setData(data);
+            setLoading(false)
+        })
+            .catch((err) => {
+                console.error(err.message)
+            })
+    }
+    useEffect(() => {
+        getData()
+    }, []);
+
+
+    const filterOnChange = (e) => {
+        setInputValue(e.target.value);
+    }
+    const filteredData = data.filter((data) => {
+        return data.city.toLowerCase().includes(inputValue.toLowerCase());
+    });
+
+    return (
+        <div className="App">
+            <Header filteredData={filteredData} inputValue={inputValue} filterOnChange={filterOnChange} />
+            <Title/>
+            <StaysData data={filteredData} loading={loading}/>
+            <Footer/>
+        </div>
+    );
 }
 
 export default App;
